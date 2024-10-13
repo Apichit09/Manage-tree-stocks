@@ -1,0 +1,187 @@
+body {
+    background: linear-gradient(to bottom, #17a2b8 35%, #ffffff 35%);
+    min-height: 100vh;
+    font-family: "Kanit", system-ui;
+}
+
+.sidebar {
+    height: 100vh;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+    position: -webkit-sticky;
+    /* สำหรับ Safari */
+    position: sticky;
+    /* สำหรับเบราว์เซอร์ส่วนใหญ่ */
+    top: 0;
+}
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.sidebar-overlay.show {
+    display: block;
+}
+
+.sidebar .nav-link {
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    background-color: #f8f9fa;
+    transform: translateX(5px);
+}
+
+.main-content {
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 2rem;
+    opacity: 0.2;
+}
+
+.search-input {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    border-radius: 20px;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-btn {
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.menu-btn.right {
+    left: auto;
+    right: 20px;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .sidebar {
+        position: -webkit-sticky;
+        /* สำหรับ Safari */
+        position: sticky;
+        /* สำหรับเบราว์เซอร์ส่วนใหญ่ */
+        top: 0;
+        /* ตั้งค่าตำแหน่งด้านบนเพื่อให้ sticky ทำงาน */
+    }
+
+}
+
+@media (max-width: 767.98px) {
+    .sidebar {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        z-index: 1001;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        overflow-y: auto;
+        transition: left 0.3s ease;
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+
+    body.sidebar-open {
+        overflow: hidden;
+    }
+
+    .menu-btn {
+        transition: all 0.3s ease;
+    }
+
+    .menu-btn.right {
+        left: auto;
+        right: 20px;
+    }
+}
+.btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    color: white;
+}
+.btn-info:hover {
+    background-color: #138496;
+    border-color: #117a8b;
+    color: white;
+}
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+}
+.password-container {
+    position: relative;
+}
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
